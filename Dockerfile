@@ -6,7 +6,7 @@ ARG SHA=707b1f6e390a65bde4af4cdaf2a24d45fc19a6ded00fff02e91626e3e42ceaff
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 RUN apk upgrade --update && \
-    apk add --no-cache curl bash && \
+    apk add --no-cache curl bash postgresql-client && \
     rm -rf /tmp/* /var/cache/apk/*
 
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
